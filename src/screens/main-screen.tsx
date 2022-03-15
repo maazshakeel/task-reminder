@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons'
 import React from 'react';
 
-const Main: React.FC = () => {
+const Main: React.FC = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <StatusBar hidden={true} />
@@ -11,7 +11,7 @@ const Main: React.FC = () => {
         <Text style={styles.headingText}>Task Manager</Text>
       </View>
       <View style={styles.plusIconContainer}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.push("add-screen")}>
           <FontAwesome name="plus" size={50} color="black" />
         </TouchableOpacity>
       </View>
