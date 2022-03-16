@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons'
 import React from 'react';
 
@@ -10,6 +10,11 @@ const Main: React.FC = ({ navigation }) => {
       <View style={styles.headingTextContainer}>
         <Text style={styles.headingText}>Task Manager</Text>
       </View>
+      <ScrollView style={styles.taskContainer}>
+        <Text style={styles.task}>foo</Text>
+        <Text style={styles.task}>bar</Text>
+        <Text style={styles.task}>baz</Text>
+      </ScrollView>
       <View style={styles.plusIconContainer}>
         <TouchableOpacity onPress={() => navigation.push("add-screen")}>
           <FontAwesome name="plus" size={50} color="black" />
@@ -27,6 +32,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'springgreen',
     alignItems: 'center',
 
+  },
+  taskContainer: {
+     
   },
   headingTextContainer: {
     paddingTop: 25,
