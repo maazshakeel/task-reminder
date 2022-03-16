@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, KeyboardAvoidingView } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons'
 import React from 'react';
 
@@ -7,7 +7,12 @@ const AddScreen: React.FC = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <StatusBar hidden={true} />
-      <Text>Add Screen</Text>
+      <KeyboardAvoidingView style={styles.inputContainer} behavior="padding">
+        <TextInput
+          style={styles.taskInput}
+          placeholder="TASK ...."
+        />
+      </KeyboardAvoidingView>
     </View>
   );
 }
@@ -21,4 +26,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
+  inputContainer: {
+    marginBottom: 50,
+  },
+  taskInput: {
+    paddingBottom: 5,
+    paddingTop: 19,
+    paddingHorizontal: 98,
+    textAlign: 'center',
+    borderWidth: 1,
+    borderRadius: 10,
+    fontFamily: 'monospace',
+    fontSize: 19,
+  }
 })
