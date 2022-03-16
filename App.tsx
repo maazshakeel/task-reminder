@@ -10,7 +10,7 @@ export default function App() {
     <NavigationContainer>
       <StackRoot.Navigator>
         <StackRoot.Screen name="main" component={Main} options={{ headerShown: false }} />
-        <StackRoot.Screen name="add-screen" component={AddScreen} options={{ headerShown: true }} />
+        <StackRoot.Screen name="add-screen" component={AddScreen} options={{ headerShown: true, title: '', headerTintColor: 'black', headerTransparent: true, headerStyle: { backgroundColor: 'springgreen' }}} />
       </StackRoot.Navigator>
     </NavigationContainer>
   );

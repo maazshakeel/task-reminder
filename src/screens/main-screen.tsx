@@ -10,11 +10,6 @@ const Main: React.FC = ({ navigation }) => {
       <View style={styles.headingTextContainer}>
         <Text style={styles.headingText}>Task Manager</Text>
       </View>
-      <ScrollView style={styles.taskContainer}>
-        <Text style={styles.task}>foo</Text>
-        <Text style={styles.task}>bar</Text>
-        <Text style={styles.task}>baz</Text>
-      </ScrollView>
       <View style={styles.plusIconContainer}>
         <TouchableOpacity onPress={() => navigation.push("add-screen")}>
           <FontAwesome name="plus" size={50} color="black" />
