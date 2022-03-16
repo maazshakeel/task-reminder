@@ -3,10 +3,13 @@ import { StyleSheet, Text, View, TouchableOpacity, TextInput, KeyboardAvoidingVi
 import { FontAwesome } from '@expo/vector-icons'
 import React, { useEffect, useState } from 'react';
 
+let id = 0;
+
 const AddScreen: React.FC = ({ navigation }) => {
 
   // state
   const [taskInput, setTaskInput] = useState("")
+  const [tasks, setTasks] = useState([{id: 0, task: "foo"}])
   const [addEnable, setAddEnable] = useState(false)
 
   // on handle onChangeText
@@ -14,6 +17,16 @@ const AddScreen: React.FC = ({ navigation }) => {
     setTaskInput(input)
 
     console.log(input.length)
+  }
+
+  const addTask = () => {
+    id++
+    setTasks(...tasks, {id: id, task: taskInput})
+    navigation.setParams('main', {
+      id: id,
+      tasks: tasks,
+    })
+    navigation.goBack()
   }
 
   useEffect(() => {
@@ -38,7 +51,7 @@ const AddScreen: React.FC = ({ navigation }) => {
       </KeyboardAvoidingView>
       <View style={styles.buttonsContainer}>
         <View style={styles.addButton}>
-          <TouchableOpacity disabled={!addEnable}>
+          <TouchableOpacity disabled={!addEnable} onPress={addTask}>
             <FontAwesome name="check" size={35} />
           </TouchableOpacity>
         </View>
@@ -72,7 +85,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     fontSize: 19,
-    justifyContent: 'center'
   },
   addButton: {
     marginHorizontal: 40,

@@ -9,7 +9,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <StackRoot.Navigator>
-        <StackRoot.Screen name="main" component={Main} options={{ headerShown: false }} />
+        <StackRoot.Screen name="main" component={Main} options={{ headerShown: false }} initialParams={{ tasks: [] }} />
         <StackRoot.Screen name="add-screen" component={AddScreen} options={{ headerShown: true, title: '', headerTintColor: 'black', headerTransparent: true, headerStyle: { backgroundColor: 'springgreen' }}} />
       </StackRoot.Navigator>
     </NavigationContainer>

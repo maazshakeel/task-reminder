@@ -3,12 +3,14 @@ import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-nati
 import { FontAwesome } from '@expo/vector-icons'
 import React from 'react';
 
-const Main: React.FC = ({ navigation }) => {
+const Main: React.FC = ({ route, navigation }) => {
+
   return (
     <View style={styles.container}>
       <StatusBar hidden={true} />
       <View style={styles.headingTextContainer}>
         <Text style={styles.headingText}>Task Manager</Text>
+        <Text>{JSON.stringify(route.params.tasks.length)}</Text>
       </View>
       <View style={styles.plusIconContainer}>
         <TouchableOpacity onPress={() => navigation.push("add-screen")}>
