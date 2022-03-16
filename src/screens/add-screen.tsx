@@ -1,9 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, KeyboardAvoidingView } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons'
-import React from 'react';
+import React, { useState } from 'react';
 
 const AddScreen: React.FC = ({ navigation }) => {
+
+  // state
+  const [taskInput, setTaskInput] = useState("")
+  const [addEnable, setAddEnable] = useState(false)
+
+  // on handle onChangeText
+  const handleTaskInput = (input: string) => setTaskInput(input)
+
   return (
     <View style={styles.container}>
       <StatusBar hidden={true} />
@@ -11,6 +19,8 @@ const AddScreen: React.FC = ({ navigation }) => {
         <TextInput
           style={styles.taskInput}
           placeholder="TASK ...."
+          value={taskInput}
+          onChangeText={handleTaskInput}
         />
       </KeyboardAvoidingView>
       <View style={styles.buttonsContainer}>
