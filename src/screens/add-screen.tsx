@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, KeyboardAvoidingView } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const AddScreen: React.FC = ({ navigation }) => {
 
@@ -10,7 +10,20 @@ const AddScreen: React.FC = ({ navigation }) => {
   const [addEnable, setAddEnable] = useState(false)
 
   // on handle onChangeText
-  const handleTaskInput = (input: string) => setTaskInput(input)
+  const handleTaskInput = (input: string) => {
+    setTaskInput(input)
+
+    console.log(input.length)
+  }
+
+  useEffect(() => {
+    if (taskInput.length > 0) {
+      setAddEnable(true)
+    } else {
+      setAddEnable(false)
+    }
+  })
+
 
   return (
     <View style={styles.container}>
@@ -25,7 +38,7 @@ const AddScreen: React.FC = ({ navigation }) => {
       </KeyboardAvoidingView>
       <View style={styles.buttonsContainer}>
         <View style={styles.addButton}>
-          <TouchableOpacity>
+          <TouchableOpacity disabled={!addEnable}>
             <FontAwesome name="check" size={35} />
           </TouchableOpacity>
         </View>
