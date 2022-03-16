@@ -24,6 +24,11 @@ const AddScreen: React.FC = ({ navigation }) => {
             <FontAwesome name="clock-o" size={35} />
           </TouchableOpacity>
         </View>
+        <View style={styles.closeButton}>
+          <TouchableOpacity>
+            <FontAwesome name="close" size={35} />
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
@@ -55,10 +60,12 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
   reminderButton: {
-    marginHorizontal: 0,
+    marginHorizontal: 10,
+  },
+  closeButton: {
+    marginHorizontal: 10,
   },
   buttonsContainer: {
-    padding: 10,
     flexDirection: 'row'
   }
 })
