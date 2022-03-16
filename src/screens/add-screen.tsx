@@ -13,6 +13,13 @@ const AddScreen: React.FC = ({ navigation }) => {
           placeholder="TASK ...."
         />
       </KeyboardAvoidingView>
+      <View style={styles.buttonsContainer}>
+        <View style={styles.addButton}>
+          <TouchableOpacity>
+            <FontAwesome name="check" size={35} />
+          </TouchableOpacity>
+        </View>
+      </View>
     </View>
   );
 }
@@ -38,5 +45,11 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     fontFamily: 'monospace',
     fontSize: 19,
+  },
+  addButton: {
+    marginTop: -20,
+  },
+  buttonsContainer: {
+    padding: 10,
   }
 })
