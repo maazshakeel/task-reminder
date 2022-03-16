@@ -72,15 +72,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     fontSize: 19,
+    justifyContent: 'center'
   },
   addButton: {
-    marginHorizontal: 10,
+    marginHorizontal: 40,
   },
   reminderButton: {
-    marginHorizontal: 10,
-  },
-  closeButton: {
-    marginHorizontal: 10,
+    marginHorizontal: 40,
   },
   buttonsContainer: {
     flexDirection: 'row'
