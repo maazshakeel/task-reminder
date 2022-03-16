@@ -35,7 +35,6 @@ const styles = StyleSheet.create({
     paddingTop: 25,
   },
   headingText: {
-    fontFamily: 'monospace',
     fontSize: 28,
   },
   plusIconContainer: {

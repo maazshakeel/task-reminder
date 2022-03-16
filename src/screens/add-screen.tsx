@@ -47,11 +47,6 @@ const AddScreen: React.FC = ({ navigation }) => {
             <FontAwesome name="clock-o" size={35} />
           </TouchableOpacity>
         </View>
-        <View style={styles.closeButton}>
-          <TouchableOpacity>
-            <FontAwesome name="close" size={35} />
-          </TouchableOpacity>
-        </View>
       </View>
     </View>
   );
@@ -76,7 +71,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     borderWidth: 1,
     borderRadius: 10,
-    fontFamily: 'monospace',
     fontSize: 19,
   },
   addButton: {
